@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    
+    <title>Jogo da Velha</title>
+</head>
+<body>
+
+    <div id="page">
+        <div id="main">
+            <h1>Jogo da Velha</h1>
+
+            <div id="container-card-board">
+                <div>
+                    <div class="card-cell" onclick="makemove(0, 0)"></div>
+                    <div class="card-cell" onclick="makemove(0, 1)"></div>
+                    <div class="card-cell" onclick="makemove(0, 2)"></div>
+                </div>
+                
+                <div>
+                    <div class="card-cell" onclick="makemove(1, 0)"></div>
+                    <div class="card-cell" onclick="makemove(1, 1)"></div>
+                    <div class="card-cell" onclick="makemove(1, 2)"></div>
+                </div>
+
+                <div>
+                    <div class="card-cell" onclick="makemove(2, 0)"></div>
+                    <div class="card-cell" onclick="makemove(2, 1)"></div>
+                    <div class="card-cell" onclick="makemove(2, 2)"></div>
+                </div>
+            </div>
+
+            <div class="selectd-player">
+                <label>Jogador: </label>
+                <label id="selectd-player">
+                </label>
+            </div>
+
+            <div class="selectd-player">
+                <label>Vencedor: </label>
+                <label id="winning-player">
+                </label>
+            </div>
+
+            <div class="button-reset">
+                <button onclick="resetBoard()">
+                    Reiniciar
+                </button>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="./script.js"></script>
+    
+</body>
+</html>
