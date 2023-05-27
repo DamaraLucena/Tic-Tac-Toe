@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #111523;
+    --gradiente-color: linear-gradient(to right, rgba(255,198,50,1) 0%, rgba(255,255,255,0.7679446778711485) 69%, rgba(17,21,35,0.22452731092436973) 100%);
+    --font-family-primary: 'Montserrat', sans-serif;
+}
+
+body{
+    font-size: 62.5%;
+    background-color: var(--bg-color);
+    font-family: var(--font-family-primary);
+}
+
+/* Page */
+
+#page{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+/* Header */
+
+header{
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 4.5rem;
+
+    padding: 2.3rem;
+
+}
+
+header h1{
+    font-family: 'Fugaz One', cursive;
+    font-size: 5rem;
+    line-height: 1.7em;
+    letter-spacing: 0.3rem;
+    
+    text-align: center;
+    align-items: center;
+    
+    --bg-size: 400%;
+    --color-one: rgba(255,198,50,1) ;
+    --color-two: rgba(255,255,255,1) ;
+    --color-three: rgba(245,218,57,1);
+
+    background: linear-gradient(
+                    281deg,
+                    var(--color-one),
+                    var(--color-two),
+                    var(--color-three),
+                    var(--color-two),
+                    var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 22s infinite linear;
+}
+
+
+/* Main */
+main{
+    width: 50rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Board */
+
+#container-card-board{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 1rem;
+    box-shadow: 2rem 2rem 6rem,
+                  -20px -20px 60px;
+}
+
+.card-cell{
+    width: 8rem;
+    height: 8rem;
+
+    border-radius: 1rem;
+    background: #c4c4c4;
+
+    margin: 0.1rem;
+    display: inline-block;
+    box-shadow: 1.2rem 1.7rem 5.1rem rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(0.6rem);
+    transition: all 0.5s;
+    user-select: none;
+    font-weight: bolder;
+
+    color: black;
+    -webkit-backdrop-filter: blur(0.6rem);
+}
+
+.card-cell:hover{
+    cursor: pointer;
+    border: 1px solid black;
+    transform: scale(1.05);
+}
+
+.card-cell:active{
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+/* Players */
+
+.selectd-player-container{
+    display: flex;
+    width: 25rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.selected-player{
+    
+    width: 12.5rem;
+    display: flex;
+    float: left;
+    
+    font-family: var(--font-family-primary);
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    
+    color: var(--bg-color);
+    background-color: #ecd448;
+    text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
+    color: #111523;
+    
+    box-shadow: 2rem 2rem 6rem, -20px -20px 60px;
+    padding: 0.4rem;
+
+}
+
+/* Botton */
+
+#btn-reset{
+    padding: 1.1em 2em;
+    background: none;
+    border: 2px solid #fff;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-radius: 12px;
+    background-color: #ecd448;
+    font-weight: bolder;
+    box-shadow: 0 2px 0 2px #000;
+}
+
+#btn-reset:before {
+    content: "";
+    position: absolute;        
+    width: 100px;
+    height: 120%;
+    background-color: rgba(255,198,50,1);
+    top: 50%;
+    transform: skewX(30deg) translate(-150%, -50%);
+    transition: all 0.9s;
+}
+       
+#btn-reset:hover {
+    background-color: #111523;
+    color: #fff;
+    box-shadow: 0 2px 0 2px #0d3b66;
+}
+       
+#btn-reset:hover::before {
+    transform: skewX(30deg) translate(150%, -50%);
+    transition-delay: 0.1s;
+}
+       
+#btn-reset:active {
+    transform: scale(0.9);
+}
+
+/* key frames */
+
+@keyframes move-bg {
+    to {
+        background-position: var(--bg-size) 0;
+    }
+}
+
+

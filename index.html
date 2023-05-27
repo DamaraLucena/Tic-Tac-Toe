@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./style.css">
     
@@ -12,8 +18,10 @@
 <body>
 
     <div id="page">
-        <div id="main">
-            <h1>Jogo da Velha</h1>
+        <header>
+            <h1>Jogo da <span>Velha</span></h1>
+        </header>
+        <main>
 
             <div id="container-card-board">
                 <div>
@@ -33,26 +41,27 @@
                     <div class="card-cell" onclick="makemove(2, 1)"></div>
                     <div class="card-cell" onclick="makemove(2, 2)"></div>
                 </div>
-            </div>
+            
+                <div class="selectd-player-container">
+                    <div class="selected-player">
+                        <label>Jogador: </label>
+                        <label id="selectd-player">
+                        </label>
+                    </div>
+        
+                    <div class="selected-player">
+                        <label>Vencedor: </label>
+                        <label id="winning-player">
+                        </label>
+                    </div>
+                </div>
 
-            <div class="selectd-player">
-                <label>Jogador: </label>
-                <label id="selectd-player">
-                </label>
+                <div class="container-buttons">
+                    <button id="btn-reset" onclick="reset()">Reiniciar</button>
+                    <button id="btn-reset" onclick="resetScore()">Zerar Placar</button>
+                </div>
             </div>
-
-            <div class="selectd-player">
-                <label>Vencedor: </label>
-                <label id="winning-player">
-                </label>
-            </div>
-
-            <div class="button-reset">
-                <button onclick="resetBoard()">
-                    Reiniciar
-                </button>
-            </div>
-        </div>
+        </main>
         
     </div>
 
