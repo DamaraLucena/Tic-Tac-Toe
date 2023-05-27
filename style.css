@@ -6,7 +6,8 @@
 
 :root {
     --bg-color: #111523;
-    --gradiente-color: linear-gradient(to right, rgba(255,198,50,1) 0%, rgba(255,255,255,0.7679446778711485) 69%, rgba(17,21,35,0.22452731092436973) 100%);
+    --gradiente-color: linear-gradient(to right, rgba(132, 78, 254
+    ) 0%, rgba(255,255,255,0.7679446778711485) 69%, rgba(17,21,35,0.22452731092436973) 100%);
     --font-family-primary: 'Montserrat', sans-serif;
 }
 
@@ -27,6 +28,17 @@ body{
     justify-content: center;
 
     gap: 2rem;
+}
+
+/* Pre Loader */
+
+#preloader{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Header */
@@ -55,9 +67,11 @@ header h1{
     align-items: center;
     
     --bg-size: 400%;
-    --color-one: rgba(255,198,50,1) ;
+    --color-one: rgba(132, 78, 254
+    ) ;
     --color-two: rgba(255,255,255,1) ;
-    --color-three: rgba(245,218,57,1);
+    --color-three: rgba(132, 78, 254
+    );
 
     background: linear-gradient(
                     281deg,
@@ -70,7 +84,7 @@ header h1{
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    animation: move-bg 22s infinite linear;
+    animation: move-bg 20s infinite linear;
 }
 
 
@@ -131,7 +145,7 @@ main{
     width: 25rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    gap: 2rem;
+    gap: 9rem;
     justify-content: center;
 }
 
@@ -146,12 +160,8 @@ main{
     letter-spacing: 0.1rem;
     
     color: var(--bg-color);
-    background-color: #ecd448;
-    text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
-    color: #111523;
-    
-    box-shadow: 2rem 2rem 6rem, -20px -20px 60px;
-    padding: 0.4rem;
+    background-color: trsparent;
+    color: #fff;
 
 }
 
@@ -160,7 +170,7 @@ main{
 #btn-reset{
     padding: 1.1em 2em;
     background: none;
-    border: 2px solid #fff;
+    border: 2px solid #fff ;
     font-size: 15px;
     color: #fff;
     cursor: pointer;
@@ -168,9 +178,9 @@ main{
     overflow: hidden;
     transition: all 0.3s;
     border-radius: 12px;
-    background-color: #ecd448;
+    background-color: rgb(132, 78, 254)
+    ;
     font-weight: bolder;
-    box-shadow: 0 2px 0 2px #000;
 }
 
 #btn-reset:before {
@@ -178,7 +188,8 @@ main{
     position: absolute;        
     width: 100px;
     height: 120%;
-    background-color: rgba(255,198,50,1);
+    background-color: rgb(166, 140, 228);
+    opacity: 0.5;
     top: 50%;
     transform: skewX(30deg) translate(-150%, -50%);
     transition: all 0.9s;
@@ -199,6 +210,33 @@ main{
     transform: scale(0.9);
 }
 
+/* Pre Loader*/
+
+.pre-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111523; /* cor de fundo */
+    z-index: 9999;
+  }
+  
+  .pre-loader img {
+    width: 100px;
+    height: 100px;
+    animation: spin 2s Linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
 /* key frames */
 
 @keyframes move-bg {
@@ -206,5 +244,3 @@ main{
         background-position: var(--bg-size) 0;
     }
 }
-
-
